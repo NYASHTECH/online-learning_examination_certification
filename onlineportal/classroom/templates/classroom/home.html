@@ -1,0 +1,347 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="hero-wrap" style="background-image: url('{% static "images/bg_1.jpg" %}')";>
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+        <div class="col-md-8 ftco-animate text-center">
+          <h1 class="mb-4">Success and Prosper through Education</h1>
+          <p><a href="/courses" class="btn btn-primary px-4 py-3">Enroll Now</a> <a href="/courses" class="btn btn-secondary px-4 py-3">View Courses</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-search-course">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="courseSearch-wrap d-md-flex flex-column-reverse">
+                      <div class="full-wrap d-flex ftco-animate">
+                          <div class="one-third order-last p-5">
+                              <span>Know what you're after?</span>
+                              <h3>I want to study</h3>
+                              <form action="/search/" class="course-search-form">
+                                
+                      <div class="form-group d-flex">
+                        <input type="text" class="form-control" name='q' placeholder="Type a course you want to study">
+                        <input type="submit" value="Search" class="submit">
+                      </div>
+                    </form>
+                    <p>Just Browsing? <a href="/courses"> See all courses</a></p>
+                          </div>
+                          <div class="one-forth order-first img" style="background-image: url('{% static "images/image_1.jpg" %}')";></div>
+                      </div>
+                      <div class="full-wrap ftco-animate">
+                          <div class="one-half">
+                              <div class="featured-blog d-md-flex">
+                                  <div class="image d-flex order-last">
+                                      <a href="#" class="img" style="background: url('{% static "images/image_2.jpg" %}')";></a>
+                                  </div>
+                                  <div class="text order-first">
+                                      <span class="date">July 13, 2020</span>
+                                      <h3><a href="#">We Raise the Bar</a></h3>
+                                          <p>Take a bold step to Learn Something new and have better experience enhanced by Technology Center at HIT</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+
+  <h2>Welcome <span class="icon-emo-happy"></span></h2>
+  <p class="lead">
+      Already have an account, Kindly <a href="{% url 'login' %}">log in</a>.
+  </p>
+  <hr>
+  <p>
+      Not registered?
+      ceate a <a href="{% url 'student_signup' %}">student account</a> or a <a href="{% url 'teacher_signup' %}">admin
+          account</a>.</p>
+
+
+  <section class="ftco-section-3 img" style="background-image: url('{% static "images/bg_1.jpg" %}')";>
+      <div class="overlay"></div>
+      <div class="container">
+          <div class="row d-md-flex justify-content-center">
+              <div class="col-md-9 about-video text-center">
+                  <h2 class="ftco-animate">Harare Institute of Technology University We Success through Innovation</h2>
+                  <div class="video d-flex justify-content-center">
+                      <a href="https://vimeo.com/45830194" class="button popup-vimeo d-flex justify-content-center align-items-center"><span class="ion-ios-play"></span></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="ftco-counter bg-light" id="section-counter">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-10">
+                  <div class="row">
+                <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                  <div class="block-18 text-center">
+                    <div class="text">
+                      <strong class="number" data-number="10300">0</strong>
+                      <span>Satisfied Students</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                  <div class="block-18 text-center">
+                    <div class="text">
+                      <strong class="number" data-number="7896">0</strong>
+                      <span>Courses Completed</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                  <div class="block-18 text-center">
+                    <div class="text">
+                      <strong class="number" data-number="400">0</strong>
+                      <span>Experts Advisors</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+                  <div class="block-18 text-center">
+                    <div class="text">
+                      <strong class="number" data-number="200">0</strong>
+                      <span>Schools</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </section>
+
+<!-- Social Media -->
+<div id="social-buttons" class="hidden-print">
+  <div class="container">
+      <ul class="list-inline">
+          <li>
+              <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=AcademicsToday&amp;repo=py-academicstoday&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+          </li>
+          <li>
+              <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=AcademicsToday&amp;repo=py-academicstoday&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
+          </li>
+          <li>
+              <iframe src="https://ghbtns.com/github-btn.html?user=AcademicsToday&repo=py-academicstoday&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+          </li>
+          <li class="follow-btn">
+              <!-- Make your own here: https://dev.twitter.com/web/follow-button -->
+              <iframe
+                  src="//platform.twitter.com/widgets/follow_button.html?screen_name=AcademicsToday"
+                  style="width: 235px; height: 20px;"
+                  allowtransparency="true"
+                  frameborder="0"
+                  scrolling="no">
+              </iframe>
+          </li>
+          <li class="tweet-btn hidden-phone">
+              <!-- Make your own here: https://about.twitter.com/resources/buttons#tweet -->
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.acadmicstoday.ca" data-text="Providing free university education to everyone on the planet, check us out!" data-via="AcademicsToday" data-hashtags="AcademicsToday">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </li>
+      </ul>
+  </div>
+</div>
+
+
+ 
+
+  <!-- Courses Section -->
+{% if top_courses.count > 0 %}
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Courses</h2>
+                <h3 class="section-subheading text-muted">Pick from the amazing courses available</h3>
+            </div>
+        </div>
+        <div class="row">
+            {% for top_pick in top_courses %}
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal1" class="portfolio-link"
+            data-toggle="modal"
+                onclick="ajax_popup_course_preview({{ top_pick.course.id }});";>
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    {% if top_pick.course.image == '' %}
+                    <img src="{% static 'images/dummy.png' %}"
+                        class="img-responsive" alt="">
+                    {% else %}
+                    <img src="{{ top_pick.course.image.url }}"
+                        class="img-responsive" alt="">
+                    {% endif %}
+                    
+                        </a>
+                <div class="portfolio-caption">
+                    <h4>{{ top_pick.course.title }}</h4>
+                    <p class="text-muted">{{ top_pick.course.category }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+  <section class="ftco-section">
+      <div class="container">
+          <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 heading-section ftco-animate text-center">
+          <h2 class="mb-4">Our Courses</h2>
+        </div>
+      </div>
+      
+          <div class="row">
+              <div class="col-md-4 d-flex ftco-animate">  
+                {% for course in courses %}
+                  <div class="course align-self-stretch">
+                      <a href="#" class="img" style="background-image: url({{course.image.url}})"></a>
+                      <div class="text p-4">
+                      
+                          <p class="category"><span>{{course.category}}</span></p>
+                          <h3 class="mb-3"><a href="#">{{course.title}}</a></h3>
+                          <p>{{course.description}}</p>
+                          <p><a href="/courses" class="btn btn-primary">Enroll now!</a></p>
+
+                      </div>
+                  </div>
+                  {% endfor %}
+
+              </div>
+          </div>
+          
+          <div class="row justify-content-center mt-5">
+          <div class="col-md-10 ftco-animate">
+              <p><strong>When she reached</strong> the first classes of the Harare Insitute of Technology , she had a last view back on the skyline of her vision and future career.</p>
+              <p><span>Just Browsing?</span><a href="course.html"> View All Courses</a></p>
+          </div>
+      </div>
+      </div>
+  </section>
+
+  
+
+<!-- Team Section -->
+<!--              -->
+<section id="team" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Our Amazing Team</h2>
+                <h3 class="section-subheading text-muted">Meet the team who are passionate about eductating the current generation and beyond!</h3>
+            </div>
+        </div>
+        <div class="row">
+            {% for team_member in team_members %}
+            <div class="col-sm-4">
+                <div class="team-member">
+                    <img src="{% static 'images/' %}{{ team_member.image_filename }}"
+                       class="img-responsive img-circle" alt="">
+                    <h4>{{ team_member.full_name }}</h4>
+                    <p class="text-muted">{{ team_member.role }}</p>
+                    <ul class="list-inline social-buttons">
+                        <li>
+                            {% if team_member.twitter_url != None %}
+                            <a href="{{ team_member.twitter_url }}">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            {% endif %}
+                        </li>
+                        <li>
+                            {% if team_member.facebook_url != None %}
+                            <a href="{{ team_member.facebook_url }}">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            {% elif team_member.google_url != None %}
+                            <a href="{{ team_member.google_url }}">
+                                <i class="fa fa-google"></i>
+                            </a>
+                            {% endif %}
+                        </li>
+                        <li>
+                            {% if team_member.linkedin_url != None %}
+                            <a href="{{ team_member.linkedin_url }}">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            {% elif team_member.github_url != None %}
+                            <a href="{{ team_member.github_url }}">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <p class="large text-muted">Follow us on your favourite social-networking site. We appreciate your support.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Clients Aside -->
+<aside class="clients">
+  <div class="container">
+      <div class="row">
+          {% for partner in partners %}
+          <div class="col-md-3 col-sm-6">
+              <a href="http://{{ partner.url }}">
+                  <img src="{% static 'images/' %}logos/{{ partner.image_filename }}"
+                     class="img-responsive img-centered"
+                       alt=""{{ partner.title }}>
+              </a>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+</aside>
+
+<!----------------------------------------------------------------------------->
+
+<!-- Modal -->
+<div id="ajax_response_course_preview"
+   name="ajax_response_course_preview"></div>
+<div id="ajax_response_login"></div>
+<div id="ajax_response_register"></div>
+<!-- end modal -->
+
+<!----------------------------------------------------------------------------->
+      
+
+{% include "classroom/js.html" %}
+
+{% if HAS_ADVERTISMENT %}
+<!-- Ads -->
+<br/>
+<div class="row">
+    <div class="col-lg-12">
+        <div style="text-align: center;">
+            <a href='http://a-ads.com?partner=68202'>Ads for Adertising</a>
+        </div>
+    </div>
+</div>
+<!-- /.Ads-->
+{% endif %}
+
+
+
+
+{% endblock content %}

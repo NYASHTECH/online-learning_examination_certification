@@ -1,0 +1,87 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    
+    <div class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg'); background-attachment:fixed;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-8 ftco-animate text-center">
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Home</a></span> <span>Contact</span></p>
+            <h1 class="mb-3 bread">Contact Us</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-section contact-section ftco-degree-bg">
+      <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+          <div class="col-md-12 mb-4">
+            <h2 class="h4">{{title}}</h2>
+          </div>
+          
+          <div class="w-100"></div>
+          <div class="col-md-3">
+            <p><span>Address:</span> Harare Institute of Technology Campus Ganges Road , Belvedere, Harare</p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Phone:</span> <a href="tel://04 741 434">04 741 427/8</a></p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Email:</span> <a href="mailto:tchit.edu.zw">tc@tchit.edu.zw</a></p>
+          </div>
+          <div class="col-md-3">
+            <p><span>Website</span> <a href="#">tchit.edu.zw</a></p>
+          </div>
+        </div>
+  
+       
+        
+        <div class="row block-9">
+          <div class="col-md-6 pr-md-5">
+            {% if confirm_message %}
+            <h4 class="mb-4">{{ confirm_message }} </h4>
+            {% endif %}
+            {% if form %}
+            <form role="form" action="" method="post">
+              {% csrf_token %}
+              {{ form|crispy }}
+              <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+              </div>
+            </form>
+          {% endif %}
+          </div>
+          
+          <div class="col-md-6" id="map"></div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-center">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <h2>Subcribe to our Newsletter</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+              <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-8">
+                  <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                      <input type="text" class="form-control" placeholder="Enter email address">
+                      <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<h1>Courses Info</h1>
+
+        
+
+            {% for courses in courses %}
+
+            <p>{{courses.title}}</p>
+               
+            <p>{{courses.Description}}</p>
+                        
+
+            {% endfor %}
+
+
+{% endblock %}

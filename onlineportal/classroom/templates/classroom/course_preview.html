@@ -1,0 +1,82 @@
+{% load static %}
+<div class="modal fade" id="course_preview_modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:77%;">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h2 class="modal-title" id="myModalLabel">Preview</h2>
+            </div>
+
+
+
+            <div class="modal-body">
+                <!-- Course Picture -->
+                <div class="col-lg-12">
+                    <p>Enjoy this Course Preview</p>
+                    {% if course.image != None and course.image.url != ''%}
+                    <img src="{{ course.image.url }}" height="100%" width="100%" />
+                    {% else %}
+                    Missing Image!
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Course Info -->
+                <div class="col-lg-12 text-left">
+                    <h2>{{ course.title }}<br/>
+                        {% if teacher == course.teacher %}
+                        <small>[You cannot enroll in a class you currently teach!]</small>
+                        {% else %}
+                        <small>{{ course.sub_title }}</small>
+                        {% endif %}
+                    </h2>
+                    {% if course.is_official %}<p align="left"><span class="badge">Offical</span></p>{% endif %}
+                    <p>{{ course.description }}<p>
+                    <p>Durration: {{ course.start_date }} to {{ course.finish_date }}</p>
+                </div>
+
+                <!-- /.Course Info -->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button"
+                       class="btn btn-primary"
+                data-dismiss="modal"
+                        form="course_preview_form"
+                     onclick="">
+                    <i class="fa fa-times"></i> Close
+                </button>
+            </div>
+
+        </div>
+    </div>
+<!-- end modal -->
+
+<script>
+
+
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+<script src="{% static 'js/scrollax.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{% static 'js/google-map.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</script>

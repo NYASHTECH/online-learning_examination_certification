@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Harare Institute of Technology</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+   
+
+    {% for local_css_url in local_css_urls %}
+            <link rel="stylesheet" href="{% static local_css_url %}">
+           
+        {% endfor %}
+        
+        {% for local_js_url in local_js_urls %}
+            <script src="{% static local_js_url %}"></script>
+        {% endfor %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+    {% if user.is_authenticated and user.is_teacher %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/teachers.css' %}">
+    {% else %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/students.css' %}">
+    {% endif %}
+    
+  </head>
+  {% include "teacher/nav.html" %}
+  <body>
+  <!-- CSRF Token -->
+  {% csrf_token %}
+    <div class="container my-4">
+      <div class="row justify-content-center">
+          <div class="col-md-10 col-sm-12">
+              <div class="row">
+                  <div class="col-6">
+                      <h1 class="logo">
+                          <a href="{% url 'home' %}">
+
+                              {% if user.is_authenticated %}
+                              {% if user.is_teacher %}
+                              <span class="icon-feather" data-toggle="tooltip" data-placement="right" title="Teacher profile"></span>
+                              {% else %}
+                              <span class="icon-graduation-cap" data-toggle="tooltip" data-placement="right" title="Student profile"></span>
+                              {% endif %}
+                              {% endif %}
+                          </a>
+                      </h1>
+                  </div>
+                  <div class="col-6 text-right">
+                      {% if user.is_authenticated %}
+                      <p class="pt-3">Logged in as <strong>{{ user.username }}</strong>. <a href="{% url 'logout' %}">Log
+                              out</a>.</p>
+                      {% else %}
+                      <a href="{% url 'login' %}" class="btn btn-light" role="button">Log in</a>
+                      <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Sign up</a>
+                      {% endif %}
+                  </div>
+              </div>
+              <div class="card mb-3">
+                  <div class="card-body">
+                      {% for message in messages %}
+                      <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
+                          {{ message }}
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      {% endfor %}
+   
+    <!-- MAIN -->
+    <div id="page-wrapper" style="min-height: 564px;">
+      <div class="container-fluid">
+          {% if HAS_ADVERTISMENT %}
+          <!-- Ads -->
+          <br/>
+          <div class="row">
+              <div class="col-lg-12">
+                  <div style="text-align: center;">
+                      <iframe data-aa="68197"
+                                  src="https://ad.a-ads.com/68197?size=320x50"
+                            scrolling="no"
+                                style="width:320px; height:50px; border:0px; padding:0;overflow:hidden;"
+                    allowtransparency="true"
+                          frameborder="0">
+                      </iframe>
+                  </div>
+              </div>
+          </div>
+          <!-- /.Ads-->
+          {% endif %}
+          
+          <!-- Content -->
+          {% block content %}
+          {% endblock %}
+          <!-- /.Content -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+</div><!-- /#wrapper -->
+
+    {% include "teacher/footer.html" %}
+
+    {% include "teacher/scripts.html" %} 
+  </body>
+</html>
