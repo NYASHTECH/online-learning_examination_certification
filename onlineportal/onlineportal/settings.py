@@ -118,10 +118,10 @@ CAPTCHA_FONT_SIZE = 52
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'TechnologyCenter',
-        'USER': 'postgres',
-        'PASSWORD':'tc@hitnerds6480' ,
-        'HOST' : 'localhost',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD':'' ,
+        'HOST' : '',
         "PORT": "5432",
     }
 }
